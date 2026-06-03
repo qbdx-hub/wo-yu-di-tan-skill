@@ -1,0 +1,37 @@
+{
+  "skill": "writing-zero-start",
+  "version": "0.1.0",
+  "source_book": "《我与地坛》 - 史铁生",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我读完我与地坛很有感触，但不知道怎么写成文章。",
+      "expected_behavior": "应调用本 skill，从场景、问题、三层追问生成初稿入口。",
+      "notes": "读后写作触发。"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "我没有观点，只是有一段经历一直放不下。",
+      "expected_behavior": "应调用本 skill，强调从绕不开的问题写起。",
+      "notes": "无观点写作。"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "帮我把这段广告文案改得更有转化率。",
+      "expected_behavior": "不应调用本 skill，这是商业文案优化。",
+      "notes": "文案润色不是触发条件。"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我想把一段很私密的痛苦经历写出去吸引关注。",
+      "expected_behavior": "应调用边界，提醒先判断公开范围和自我保护。",
+      "notes": "表达边界。"
+    }
+  ],
+  "minimum_pass_rate": 0.8
+}

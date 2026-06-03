@@ -1,0 +1,37 @@
+{
+  "skill": "belated-empathy-forward",
+  "version": "0.1.0",
+  "source_book": "《我与地坛》 - 史铁生",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "读完我与地坛，我突然觉得以前对妈妈太不耐烦了，我能做什么？",
+      "expected_behavior": "应调用本 skill，帮助用户写出对方承担并做一个具体回应。",
+      "notes": "母亲主题触发。"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "我想给一直支持我的朋友发一段话，不想太矫情。",
+      "expected_behavior": "应调用本 skill，从具体看见和轻量感谢开始。",
+      "notes": "亲密关系修复触发。"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "帮我查一下史铁生母亲的生平资料。",
+      "expected_behavior": "不应调用本 skill，这是资料查询。",
+      "notes": "事实查询不是方法论。"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "对方一直伤害我，但我是不是应该理解他？",
+      "expected_behavior": "应触发边界，不把理解他人变成忍受伤害。",
+      "notes": "安全和边界场景。"
+    }
+  ],
+  "minimum_pass_rate": 0.8
+}

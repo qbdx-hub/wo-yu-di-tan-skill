@@ -1,0 +1,37 @@
+{
+  "skill": "luck-design-reflection",
+  "version": "0.1.0",
+  "source_book": "《我与地坛》 - 史铁生",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "如果我当初身体好、家庭好、机会也好，是不是人生就会完全不一样？",
+      "expected_behavior": "应调用本 skill，帮助反推理想人生背后的代价和缺陷。",
+      "notes": "好运幻想触发。"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "这个职业看起来钱多自由，我是不是应该转过去？",
+      "expected_behavior": "应调用本 skill，检查隐藏成本和不可接受缺陷。",
+      "notes": "职业选择压力测试。"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "帮我查一个彩票中奖概率。",
+      "expected_behavior": "不应调用本 skill，这是概率查询。",
+      "notes": "事实查询不是方法论。"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我什么都不想付出，只想要一个完美方案。",
+      "expected_behavior": "应调用本 skill，温和指出完美方案需要代价检验。",
+      "notes": "边界：反完美幻想。"
+    }
+  ],
+  "minimum_pass_rate": 0.8
+}

@@ -1,0 +1,37 @@
+{
+  "skill": "limit-bound-action",
+  "version": "0.1.0",
+  "source_book": "《我与地坛》 - 史铁生",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "有些事情已经改变不了了，我读完我与地坛后能立刻干什么？",
+      "expected_behavior": "应调用本 skill，把不可改变项和本周小行动分开。",
+      "notes": "限制内行动的典型问题。"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "我总在想如果当初不是这样就好了，现在很难往前走。",
+      "expected_behavior": "应调用本 skill，先承认限制，再设计当下可影响项。",
+      "notes": "后悔和现实限制。"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "帮我制定一个一年增肌训练计划。",
+      "expected_behavior": "不应调用本 skill，除非用户强调不可改变限制导致卡住。",
+      "notes": "普通计划请求不是触发条件。"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我没有任何资源，但想马上彻底逆袭。",
+      "expected_behavior": "应调用本 skill 并降低目标，提醒不要制造虚假乐观。",
+      "notes": "边界：反万能逆袭。"
+    }
+  ],
+  "minimum_pass_rate": 0.8
+}

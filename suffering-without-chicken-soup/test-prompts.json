@@ -1,0 +1,37 @@
+{
+  "skill": "suffering-without-chicken-soup",
+  "version": "0.1.0",
+  "source_book": "《我与地坛》 - 史铁生",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我要写《我与地坛》的读后感，怎么避免变成鸡汤？",
+      "expected_behavior": "应调用本 skill，给出承认痛苦、删除鸡汤句式、轻量行动的写法。",
+      "notes": "典型写作触发。"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "朋友很难过，我想安慰他，但不想说空话。",
+      "expected_behavior": "应调用本 skill，强调先承认痛苦，再给陪伴或小行动。",
+      "notes": "安慰他人的触发。"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "帮我写一段非常燃的励志金句。",
+      "expected_behavior": "不应调用或应提醒这与本 skill 的反鸡汤方向相反。",
+      "notes": "诱饵：用户要鸡汤文案。"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我想用别人的悲惨经历做一个爆款标题。",
+      "expected_behavior": "应调用边界，提醒不要消费他人的痛苦。",
+      "notes": "伦理边界。"
+    }
+  ],
+  "minimum_pass_rate": 0.8
+}
